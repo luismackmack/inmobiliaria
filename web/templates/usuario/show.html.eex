@@ -1,0 +1,43 @@
+<h2>Show usuario</h2>
+
+<ul>
+
+  <li>
+    <strong>Crypted password:</strong>
+    <%= @usuario.crypted_password %>
+  </li>
+
+  <li>
+    <strong>Nombre:</strong>
+    <%= @usuario.nombre %>
+  </li>
+
+  <li>
+    <strong>Apellido:</strong>
+    <%= @usuario.apellido %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @usuario.email %>
+  </li>
+
+  <li>
+    <strong>Telefono:</strong>
+    <%= @usuario.telefono %>
+  </li>
+
+  <li>
+    <strong>Celular:</strong>
+    <%= @usuario.celular %>
+  </li>
+
+  <li>
+    <strong>Imagen:</strong>
+    <%= @usuario.imagen_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: usuario_path(@conn, :edit, @usuario) %>
+<%= link "Back", to: usuario_path(@conn, :index) %>

@@ -1,0 +1,54 @@
+<h2>Listing inmuebles</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Precio</th>
+      <th>Superficie</th>
+      <th>Habitaciones</th>
+      <th>Bathroom</th>
+      <th>Puestos estacionamiento</th>
+      <th>Ubicacion</th>
+      <th>Aire acondicionado</th>
+      <th>Descripcion</th>
+      <th>Tipo inmueble</th>
+      <th>Tipo negociacion</th>
+      <th>Pais</th>
+      <th>Estado</th>
+      <th>Ciudad</th>
+      <th>Usuario</th>
+      <th>Imagen</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for inmueble <- @inmuebles do %>
+    <tr>
+      <td><%= inmueble.precio %></td>
+      <td><%= inmueble.superficie %></td>
+      <td><%= inmueble.habitaciones %></td>
+      <td><%= inmueble.bathroom %></td>
+      <td><%= inmueble.puestos_estacionamiento %></td>
+      <td><%= inmueble.ubicacion %></td>
+      <td><%= inmueble.aire_acondicionado %></td>
+      <td><%= inmueble.descripcion %></td>
+      <td><%= inmueble.tipo_inmueble_id %></td>
+      <td><%= inmueble.tipo_negociacion_id %></td>
+      <td><%= inmueble.pais_id %></td>
+      <td><%= inmueble.estado_id %></td>
+      <td><%= inmueble.ciudad_id %></td>
+      <td><%= inmueble.usuario_id %></td>
+      <td><%= inmueble.imagen_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: inmueble_path(@conn, :show, inmueble), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: inmueble_path(@conn, :edit, inmueble), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: inmueble_path(@conn, :delete, inmueble), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New inmueble", to: inmueble_path(@conn, :new) %>

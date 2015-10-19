@@ -1,0 +1,83 @@
+<h2>Show inmueble</h2>
+
+<ul>
+
+  <li>
+    <strong>Precio:</strong>
+    <%= @inmueble.precio %>
+  </li>
+
+  <li>
+    <strong>Superficie:</strong>
+    <%= @inmueble.superficie %>
+  </li>
+
+  <li>
+    <strong>Habitaciones:</strong>
+    <%= @inmueble.habitaciones %>
+  </li>
+
+  <li>
+    <strong>Bathroom:</strong>
+    <%= @inmueble.bathroom %>
+  </li>
+
+  <li>
+    <strong>Puestos estacionamiento:</strong>
+    <%= @inmueble.puestos_estacionamiento %>
+  </li>
+
+  <li>
+    <strong>Ubicacion:</strong>
+    <%= @inmueble.ubicacion %>
+  </li>
+
+  <li>
+    <strong>Aire acondicionado:</strong>
+    <%= @inmueble.aire_acondicionado %>
+  </li>
+
+  <li>
+    <strong>Descripcion:</strong>
+    <%= @inmueble.descripcion %>
+  </li>
+
+  <li>
+    <strong>Tipo inmueble:</strong>
+    <%= @inmueble.tipo_inmueble_id %>
+  </li>
+
+  <li>
+    <strong>Tipo negociacion:</strong>
+    <%= @inmueble.tipo_negociacion_id %>
+  </li>
+
+  <li>
+    <strong>Pais:</strong>
+    <%= @inmueble.pais_id %>
+  </li>
+
+  <li>
+    <strong>Estado:</strong>
+    <%= @inmueble.estado_id %>
+  </li>
+
+  <li>
+    <strong>Ciudad:</strong>
+    <%= @inmueble.ciudad_id %>
+  </li>
+
+  <li>
+    <strong>Usuario:</strong>
+    <%= @inmueble.usuario_id %>
+  </li>
+
+  <li>
+    <strong>Imagen:</strong>
+    <%= @inmueble.imagen_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: inmueble_path(@conn, :edit, @inmueble) %>
+<%= link "Back", to: inmueble_path(@conn, :index) %>

@@ -1,0 +1,114 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :usuario, "De Usuario", class: "control-label" %>
+    <select class="form-control" id="usuario" name="usuario">
+      <option value="0">Seleccione una opcion</option>
+      <%= for u <- @usuario do %>
+        <option value="<%= u.id %>"><%= u.nombre %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tipo_inmueble, "Tipo Inmueble", class: "control-label" %>
+    <select class="form-control" id="tipo_inmueble" name="tipo_inmueble">
+      <option value="0">Seleccione una opcion</option>
+      <%= for ti <- @tipo_inmueble do %>
+        <option value="<%= ti.id %>"><%= ti.nombre %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tipo_negociacion, "Tipo Negociacion", class: "control-label" %>
+    <select class="form-control" id="tipo_negociacion" name="tipo_negociacion">
+      <option value="0">Seleccione una opcion</option>
+      <%= for tn <- @tipo_negociacion do %>
+        <option value="<%= tn.id %>"><%= tn.nombre %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :precio, "Precio", class: "control-label" %>
+    <%= number_input f, :precio, step: "any", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :superficie, "Superficie en Metros Cuadrado", class: "control-label" %>
+    <%= number_input f, :superficie, step: "any", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :habitaciones, "Cantidad Habitaciones", class: "control-label" %>
+    <%= number_input f, :habitaciones, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :bathroom, "Bathroom", class: "control-label" %>
+    <%= number_input f, :bathroom, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :aire_acondicionado, "Con aire acondicionado", class: "control-label" %>
+    <%= checkbox f, :aire_acondicionado, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :puestos_estacionamiento, "Puestos estacionamiento", class: "control-label" %>
+    <%= number_input f, :puestos_estacionamiento, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <h3>Ubicacion</h3>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :pais, "Pais", class: "control-label" %>
+    <select class="form-control" id="pais" name="pais">
+      <option value="0">Seleccione una opcion</option>
+      <%= for p <- @pais do %>
+        <option value="<%= p.id %>"><%= p.nombre %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :estado, "Estado", class: "control-label" %>
+    <select class="form-control" id="estado" name="estado">
+      <option value="0">Seleccione una opcion</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :ciudad, "Municipio", class: "control-label" %>
+    <select class="form-control" id="ciudad" name="ciudad">
+      <option value="0">Seleccione una opcion</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :ubicacion, "Ubicacion", class: "control-label" %>
+    <%= textarea f, :ubicacion, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :descripcion, "Descripcion", class: "control-label" %>
+    <%= textarea f, :descripcion, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

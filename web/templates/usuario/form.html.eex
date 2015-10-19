@@ -1,0 +1,46 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :crypted_password, "Crypted password", class: "control-label" %>
+    <%= password_input f, :crypted_password, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :nombre, "Nombre", class: "control-label" %>
+    <%= text_input f, :nombre, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :apellido, "Apellido", class: "control-label" %>
+    <%= text_input f, :apellido, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :email, "Email", class: "control-label" %>
+    <%= text_input f, :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :telefono, "Telefono", class: "control-label" %>
+    <%= text_input f, :telefono, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :celular, "Celular", class: "control-label" %>
+    <%= text_input f, :celular, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

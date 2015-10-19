@@ -1,0 +1,95 @@
+<%= form_for @changeset, @action, fn f -> %>
+	<div class="row">
+	  <div class="col-md-6">
+	  	<%= label f, :tipo_inmueble, "Tipo Inmueble:", class: "control-label" %>
+	  	<select class="form-control" id="tipo_inmueble" name="tipo_inmueble">
+	      <option value="0">Seleccione una opcion</option>
+	      <%= for ti <- @tipo_inmueble do %>
+	        <option value="<%= ti.id %>"><%= ti.nombre %></option>
+	      <% end %>
+	    </select>
+	  </div>
+	  <div class="col-md-6">
+			<%= label f, :tipo_negociacion, "Tipo Negociacion", class: "control-label" %>
+	    <select class="form-control" id="tipo_negociacion" name="tipo_negociacion">
+	      <option value="0">Seleccione una opcion</option>
+	      <%= for tn <- @tipo_negociacion do %>
+	        <option value="<%= tn.id %>"><%= tn.nombre %></option>
+	      <% end %>
+	    </select>
+	  </div>
+	</div>
+	</br>
+	<div class="row">
+		<div class="col-md-12">
+			<%= label f, :precio, "Precio Bs. entre", class: "control-label" %>
+		<div class="row">	
+			<div class="col-md-5">
+				<%= number_input f, :precio_a, step: "any", class: "form-control", value: 0 %>
+			</div>
+			<div class="col-md-2" align = "center"><strong>y</strong></div>	
+			<div class="col-md-5">
+				<%= number_input f, :precio_b, step: "any", class: "form-control", value: 0 %>
+			</div>
+		</div>
+		</div>
+	</div>
+	</br>
+	<div class="row">
+		<div class="col-md-12">
+			<%= label f, :superficie, "Seperficie mts cuadrado entre", class: "control-label" %>
+		<div class="row">	
+			<div class="col-md-5">
+				<%= number_input f, :superficie_a, step: "any", class: "form-control", value: 0 %>
+			</div>
+			<div class="col-md-2" align = "center"><strong>y</strong></div>	
+			<div class="col-md-5">
+				<%= number_input f, :superficie_b, step: "any", class: "form-control", value: 0 %>
+			</div>
+		</div>
+		</div>
+	</div>
+	</br>
+	<div class="row">
+		<div class="col-md-4">
+	    <%= label f, :pais, "Pais", class: "control-label" %>
+	    <select class="form-control" id="pais" name="pais">
+	      <option value="0">Seleccione una opcion</option>
+	      <%= for p <- @pais do %>
+	        <option value="<%= p.id %>"><%= p.nombre %></option>
+	      <% end %>
+	    </select>
+	  </div>
+	  <div class="col-md-4">
+		<%= label f, :estado, "Estado", class: "control-label" %>
+	    <select class="form-control" id="estado" name="estado">
+	      <option value="0">Seleccione una opcion</option>
+	    </select>
+	  </div>
+	  <div class="col-md-4">
+	    <%= label f, :ciudad, "Municipio", class: "control-label" %>
+	    <select class="form-control" id="ciudad" name="ciudad">
+	      <option value="0">Seleccione una opcion</option>
+	    </select>
+	  </div>
+	</div>
+	</br>
+	<div class="row">
+		<div class="col-md-4">
+	    <%= label f, :habitaciones, "Habitaciones", class: "control-label" %>
+	    <%= number_input f, :habitaciones, class: "form-control", value: 0 %>
+	  </div>
+	  <div class="col-md-4">
+	    <%= label f, :puestos_estacionamiento, "Puestos estacionamiento", class: "control-label" %>
+	    <%= number_input f, :puestos_estacionamiento, class: "form-control", value: 0 %>
+	  </div>
+	  <div class="col-md-4">
+	    <%= label f, :aire_acondicionado, "Con aire acondicionado", class: "control-label" %>
+	    <%= checkbox f, :aire_acondicionado, class: "form-control" %>
+	  </div>
+	</div>
+	</br>
+	<div class="form-group" align = "right">
+		<%= submit "Buscar", class: "btn btn-primary" %>
+	</div>
+<% end %>

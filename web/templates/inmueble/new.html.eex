@@ -1,0 +1,7 @@
+<h2>New inmueble</h2>
+
+<%= render "form.html", changeset: @changeset, tipo_inmueble: @tipo_inmueble, 
+tipo_negociacion: @tipo_negociacion, pais: @pais, usuario: @usuario,
+                        action: inmueble_path(@conn, :create) %>
+
+<%= link "Back", to: inmueble_path(@conn, :index) %>
